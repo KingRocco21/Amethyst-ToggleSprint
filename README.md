@@ -1,3 +1,6 @@
+# Archival Notice
+I'm not planning on doing any more modding for Minecraft. If you would like this mod to be updated to a newer version of Amethyst, feel free to fork or take any code you need!
+
 <img src="https://github.com/KingRocco21/ToggleSprint-Amethyst/blob/main/icon.jpeg?raw=true" width="128">
 
 # Toggle Sprint for Amethyst  

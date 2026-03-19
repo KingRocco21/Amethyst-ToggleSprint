@@ -9,8 +9,6 @@
 #include <mc/src-client/common/client/input/Keymapping.hpp>
 #include <vector>
 
-// Testing
-
 static ToggleManager* g_toggleManager;
 
 void RegisterInputs(RegisterInputsEvent& event)
@@ -71,15 +69,6 @@ void RegisterInputs(RegisterInputsEvent& event)
             else Log::Info("Walk Forwards pressed outside of gameplay. Ignoring button press.");
             return Amethyst::InputPassthrough::Passthrough;
         });
-
-    // Testing
-    std::vector<int> hotbar1Keys{ OptionsFileSearcher::findExistingKeys("key.hotbar.1", { 49 }) }; // 49 = 1 key
-    Amethyst::InputAction& hotbar1{ context.mInputManager->RegisterNewInput("hotkey.1", hotbar1Keys, true, Amethyst::KeybindContext::Screen) };
-    hotbar1.addButtonDownHandler([](FocusImpact focus, ClientInstance& client)
-        {
-            std::cout << "Hotbar 1 pressed\n";
-            return Amethyst::InputPassthrough::ModOnly;
-        });
 }
 
 void OnStartJoinGame(OnStartJoinGameEvent& event)
@@ -98,7 +87,7 @@ void OnRequestLeaveGame(OnRequestLeaveGameEvent& event)
     g_toggleManager = nullptr;
 }
 
-ModFunction void Initialize(AmethystContext& ctx, const Amethyst::Mod& mod) 
+ModFunction void Initialize(AmethystContext& ctx, const Amethyst::Mod& mod)
 {
     Amethyst::InitializeAmethystMod(ctx, mod);
 
